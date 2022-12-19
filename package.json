@@ -1,0 +1,26 @@
+{
+  "name": "noted",
+  "version": "1.0.0",
+  "description": "A simple markdown to HTML parser built with TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomisadev/noted.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atomisadev/noted/issues"
+  },
+  "homepage": "https://github.com/atomisadev/noted#readme",
+  "dependencies": {
+    "@types/marked": "^4.0.8",
+    "@types/node": "^18.11.17",
+    "fs": "^0.0.1-security",
+    "marked": "^4.2.4"
+  }
+}
