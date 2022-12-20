@@ -6,6 +6,8 @@ Easily compile your notes in markdown into static web pages. You can then deploy
 - Table of Contents
 - Instant compilation
 - Easy deployment
+- Development mode (serve your HTML websites automatically using `annotate serve`)
+  - HMR (hot module replacement) coming soon
 
 ## Installation
 Installation of this is quite simple. You can clone the source code and run it. Or, if you prefer a CLI tool, you can install `annotate` from npm.
