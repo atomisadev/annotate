@@ -1,14 +1,17 @@
 {
-  "name": "noted",
+  "name": "annotate",
   "version": "1.0.0",
   "description": "A simple markdown to HTML parser built with TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && npm i -g"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/atomisadev/noted.git"
+  },
+  "bin": {
+    "annotate": "./dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -18,9 +21,11 @@
   },
   "homepage": "https://github.com/atomisadev/noted#readme",
   "dependencies": {
+    "@types/express": "^4.17.15",
     "@types/marked": "^4.0.8",
     "@types/node": "^18.11.17",
     "@types/yargs": "^17.0.17",
+    "express": "^4.18.2",
     "fs": "^0.0.1-security",
     "marked": "^4.2.4",
     "yargs": "^17.6.2"

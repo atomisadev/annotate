@@ -1,6 +1,9 @@
+#! /usr/bin/env node
+
 import * as fs from "fs";
 import * as path from "path";
 import { marked } from "marked";
+import express from "express";
 import yargs from "yargs";
 
 // Define the compile command
@@ -131,6 +134,43 @@ yargs.command({
 });
 
 // Parse the command-line arguments
+yargs.parse();
+
+yargs.command({
+  command: "serve",
+  describe: "Serve HTML files from a directory on a given port",
+  builder: (yargs) => {
+    return yargs
+      .option("directory", {
+        alias: "d",
+        describe: "The directory containing the HTML files",
+        type: "string",
+        demandOption: true,
+      })
+      .option("port", {
+        alias: "p",
+        describe: "The port to serve the files on",
+        type: "number",
+        default: 8080,
+      });
+  },
+  handler: (argv) => {
+    const directory = argv.directory;
+    const port = argv.port;
+
+    // Create an Express app
+    const app = express();
+
+    // Serve static files from the specified directory
+    app.use(express.static(directory));
+
+    // Listen for requests on the specified port
+    app.listen(port, () => {
+      console.log(`Listening on port ${port}`);
+    });
+  },
+});
+
 yargs.parse();
 
 yargs.command({
