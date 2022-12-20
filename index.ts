@@ -41,6 +41,16 @@ if (fs.existsSync(inputDir)) {
       .content {
         grid-column: 2;
       }
+
+      .toc h2 {
+        margin-left: 15px;
+      }
+      .toc h3 {
+        margin-left: 30;
+      }
+      .toc h4 {
+        margin-left: 45px;
+      }
     </style>
   </head>
   <body>
@@ -54,7 +64,7 @@ if (fs.existsSync(inputDir)) {
     </div>
     <script>
       // Extract headings from the content
-      const headings = document.querySelectorAll('main h2, main h3, main h4');
+      const headings = document.querySelectorAll('main h1, main h2, main h3, main h4');
 
       // Generate the TOC
       const toc = document.createElement('ul');
