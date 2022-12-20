@@ -24,64 +24,64 @@ if (fs.existsSync(inputDir)) {
 
       // Add a stylesheet to the HTML
       const styledHtml = `
-        <html>
-  <head>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-      body {
-       font-family: "Inter", sans-serif; 
-      }
-      .container {
-        display: grid;
-        grid-template-columns: 250px 1fr;
-      }
-      .toc {
-        grid-column: 1;
-      }
-      .content {
-        grid-column: 2;
-      }
+      <html>
+        <head>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+          <style>
+            body {
+            font-family: "Inter", sans-serif; 
+            }
+            .container {
+              display: grid;
+              grid-template-columns: 250px 1fr;
+            }
+            .toc {
+              grid-column: 1;
+            }
+            .content {
+              grid-column: 2;
+            }
 
-      .toc h2 {
-        margin-left: 15px;
-      }
-      .toc h3 {
-        margin-left: 30;
-      }
-      .toc h4 {
-        margin-left: 45px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <nav class="toc">
-        <!-- TOC goes here -->
-      </nav>
-      <main class="content">
-        ${html}
-      </main>
-    </div>
-    <script>
-      // Extract headings from the content
-      const headings = document.querySelectorAll('main h1, main h2, main h3, main h4');
+            .toc h2 {
+              margin-left: 15px;
+            }
+            .toc h3 {
+              margin-left: 30;
+            }
+            .toc h4 {
+              margin-left: 45px;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <nav class="toc">
+              <!-- TOC goes here -->
+            </nav>
+            <main class="content">
+              ${html}
+            </main>
+          </div>
+          <script>
+            // Extract headings from the content
+            const headings = document.querySelectorAll('main h1, main h2, main h3, main h4');
 
-      // Generate the TOC
-      const toc = document.createElement('ul');
-      headings.forEach(heading => {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.textContent = heading.textContent;
-        a.href = \`#\${heading.id}\`;
-        li.appendChild(a);
-        toc.appendChild(li);
-      });
+            // Generate the TOC
+            const toc = document.createElement('ul');
+            headings.forEach(heading => {
+              const li = document.createElement('li');
+              const a = document.createElement('a');
+              a.textContent = heading.textContent;
+              a.href = \`#\${heading.id}\`;
+              li.appendChild(a);
+              toc.appendChild(li);
+            });
 
-      // Insert the TOC into the page
-      document.querySelector('.toc').appendChild(toc);
-    </script>
-  </body>
-</html>
+            // Insert the TOC into the page
+            document.querySelector('.toc').appendChild(toc);
+          </script>
+        </body>
+      </html>
       `;
 
       // Check if the output directory exists
