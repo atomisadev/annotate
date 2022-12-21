@@ -5,6 +5,7 @@ Easily compile your notes in markdown into static web pages. You can then deploy
 ## Features
 
 - Automatic LaTex support (`$` for inline, `$$$` for multi-line)
+  - Coming soon
 - Table of Contents
 - Instant compilation
 - Easy deployment
