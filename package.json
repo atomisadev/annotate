@@ -1,6 +1,6 @@
 {
   "name": "@atomdevelops/annotate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple markdown to HTML parser built with TypeScript",
   "main": "index.js",
   "scripts": {
