@@ -133,9 +133,6 @@ yargs.command({
   },
 });
 
-// Parse the command-line arguments
-yargs.parse();
-
 yargs.command({
   command: "serve",
   describe: "Serve HTML files from a directory on a given port",
@@ -164,14 +161,17 @@ yargs.command({
     // Serve static files from the specified directory
     app.use(express.static(directory));
 
-    // Listen for requests on the specified port
+    app.get("/", (req: express.Request, res: express.Response) => {
+      res.send(
+        'You can access your generated HTML files using routes. For example, a file named "rates.html" could be accessed by going to "/rates.html" in the URL.'
+      );
+    });
+
     app.listen(port, () => {
       console.log(`Listening on port ${port}`);
     });
   },
 });
-
-yargs.parse();
 
 yargs.command({
   command: "help",
